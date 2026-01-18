@@ -15,4 +15,7 @@ dependencies = [
     "zep-cloud==3.4.3",
     "crewai>=1.6.1",
     "zep-crewai==1.1.1",
+    "firecrawl-py==4.3.6",
+    "yt-dlp>=2024.12.13",
+    "assemblyai==0.44.3",
 ]

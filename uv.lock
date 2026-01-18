@@ -155,6 +155,21 @@ wheels = [
 ]
 
 [[package]]
+name = "assemblyai"
+version = "0.44.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "httpx" },
+    { name = "pydantic" },
+    { name = "typing-extensions" },
+    { name = "websockets" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/58/65/822b113d62aca2a8fae6271d86bcb2ea557ccbfd6a251199da66a32abc8a/assemblyai-0.44.3.tar.gz", hash = "sha256:182bc48ebe9562a9bf8cd6cd08570e07094cf56dd5b90ebe42da8025936488bb", size = 54134, upload-time = "2025-09-18T07:30:44.745Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/36/e6/6cb158123cd353825121a2fe711e485090231c746a739531486eb1413c67/assemblyai-0.44.3-py3-none-any.whl", hash = "sha256:40fe849dc86eb5b158a46692eed36b59001c3c16f491c470c2f84de2f1ab1dff", size = 50208, upload-time = "2025-09-18T07:30:43.54Z" },
+]
+
+[[package]]
 name = "attrs"
 version = "25.4.0"
 source = { registry = "https://pypi.org/simple" }
@@ -670,6 +685,24 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/1d/65/ce7f1b70157833bf3cb851b556a37d4547ceafc158aa9b34b36782f23696/filelock-3.20.3.tar.gz", hash = "sha256:18c57ee915c7ec61cff0ecf7f0f869936c7c30191bb0cf406f1341778d0834e1", size = 19485, upload-time = "2026-01-09T17:55:05.421Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b5/36/7fb70f04bf00bc646cd5bb45aa9eddb15e19437a28b8fb2b4a5249fac770/filelock-3.20.3-py3-none-any.whl", hash = "sha256:4b0dda527ee31078689fc205ec4f1c1bf7d56cf88b6dc9426c4f230e46c2dce1", size = 16701, upload-time = "2026-01-09T17:55:04.334Z" },
+]
+
+[[package]]
+name = "firecrawl-py"
+version = "4.3.6"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "aiohttp" },
+    { name = "httpx" },
+    { name = "nest-asyncio" },
+    { name = "pydantic" },
+    { name = "python-dotenv" },
+    { name = "requests" },
+    { name = "websockets" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9e/c8/623ededf2d6cb6d9076e006fa0e6945f199a2376f6b9ed9490b578780090/firecrawl_py-4.3.6.tar.gz", hash = "sha256:303827a86d0f6237a8ddcaa0bcdaa4c5ee11d9a4880b0685302b8d9a0e191ee0", size = 133431, upload-time = "2025-09-07T19:07:11.974Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7a/ac/f129e839a0de542473f8e264b741ab4922fabda23146ffd19298fedbffa4/firecrawl_py-4.3.6-py3-none-any.whl", hash = "sha256:9b5dffdf5ed08fdbf0966f17e18c1a034d59f42a20b2bf9a6291a83190d7eb0f", size = 168702, upload-time = "2025-09-07T19:07:10.556Z" },
 ]
 
 [[package]]
@@ -1553,6 +1586,15 @@ wheels = [
 ]
 
 [[package]]
+name = "nest-asyncio"
+version = "1.6.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/83/f8/51569ac65d696c8ecbee95938f89d4abf00f47d58d48f6fbabfe8f0baefe/nest_asyncio-1.6.0.tar.gz", hash = "sha256:6f172d5449aca15afd6c646851f4e31e02c598d553a667e38cafa997cfec55fe", size = 7418, upload-time = "2024-01-21T14:25:19.227Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a0/c4/c2971a3ba4c6103a3d10c4b0f24f461ddc027f0f09763220cf35ca1401b3/nest_asyncio-1.6.0-py3-none-any.whl", hash = "sha256:87af6efd6b5e897c81050477ef65c62e2b2f35d51703cae01aff2905b1852e1c", size = 5195, upload-time = "2024-01-21T14:25:17.223Z" },
+]
+
+[[package]]
 name = "networkx"
 version = "3.6.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1575,28 +1617,34 @@ name = "notebook-lm"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "assemblyai" },
     { name = "chromadb" },
     { name = "crewai" },
     { name = "fastembed" },
+    { name = "firecrawl-py" },
     { name = "litai" },
     { name = "mistralai" },
     { name = "pymupdf" },
     { name = "python-dotenv" },
     { name = "sentence-transformers" },
+    { name = "yt-dlp" },
     { name = "zep-cloud" },
     { name = "zep-crewai" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "assemblyai", specifier = "==0.44.3" },
     { name = "chromadb", specifier = ">=0.4.0" },
     { name = "crewai", specifier = ">=1.6.1" },
     { name = "fastembed", specifier = "==0.7.3" },
+    { name = "firecrawl-py", specifier = "==4.3.6" },
     { name = "litai", specifier = ">=0.0.10" },
     { name = "mistralai", specifier = ">=1.10.1" },
     { name = "pymupdf", specifier = ">=1.26.7" },
     { name = "python-dotenv", specifier = ">=1.0.0" },
     { name = "sentence-transformers", specifier = ">=2.2.0" },
+    { name = "yt-dlp", specifier = ">=2024.12.13" },
     { name = "zep-cloud", specifier = "==3.4.3" },
     { name = "zep-crewai", specifier = "==1.1.1" },
 ]
@@ -3825,6 +3873,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/f9/86/0f0dccb6e59a9e7f122c5afd43568b1d31b8ab7dda5f1b01fb5c7025c9a9/yarl-1.22.0-cp314-cp314t-win_amd64.whl", hash = "sha256:9fb17ea16e972c63d25d4a97f016d235c78dd2344820eb35bc034bc32012ee27", size = 96292, upload-time = "2025-10-06T14:12:15.398Z" },
     { url = "https://files.pythonhosted.org/packages/48/b7/503c98092fb3b344a179579f55814b613c1fbb1c23b3ec14a7b008a66a6e/yarl-1.22.0-cp314-cp314t-win_arm64.whl", hash = "sha256:9f6d73c1436b934e3f01df1e1b21ff765cd1d28c77dfb9ace207f746d4610ee1", size = 85171, upload-time = "2025-10-06T14:12:16.935Z" },
     { url = "https://files.pythonhosted.org/packages/73/ae/b48f95715333080afb75a4504487cbe142cae1268afc482d06692d605ae6/yarl-1.22.0-py3-none-any.whl", hash = "sha256:1380560bdba02b6b6c90de54133c81c9f2a453dee9912fe58c1dcced1edb7cff", size = 46814, upload-time = "2025-10-06T14:12:53.872Z" },
+]
+
+[[package]]
+name = "yt-dlp"
+version = "2025.9.23"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/90/77/24a13bbd3190849e7e37e6093aa9648f3b26a836d37ba67e3429ee89ad1d/yt_dlp-2025.9.23.tar.gz", hash = "sha256:9282ad1deadb4c90b2e6d3bcf9f360abf88c5f2e4ba836dad7b51387b086d757", size = 3036855, upload-time = "2025-09-23T06:54:46.174Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1e/b7/723a4061d7efac4bbb86eddef9ceec0fc1e85415c7d665c2e5e1879759bb/yt_dlp-2025.9.23-py3-none-any.whl", hash = "sha256:84e36acf2dfbadb307d734a590dd937923173b13c57cf45a662f40c93e746302", size = 3241497, upload-time = "2025-09-23T06:54:43.485Z" },
 ]
 
 [[package]]
