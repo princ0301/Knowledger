@@ -14,4 +14,5 @@ dependencies = [
     "python-dotenv>=1.0.0",
     "zep-cloud==3.4.3",
     "crewai>=1.6.1",
+    "zep-crewai==1.1.1",
 ]
