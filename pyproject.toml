@@ -12,4 +12,6 @@ dependencies = [
     "litai>=0.0.10",
     "mistralai>=1.10.1",
     "python-dotenv>=1.0.0",
+    "zep-cloud==3.4.3",
+    "crewai>=1.6.1",
 ]
