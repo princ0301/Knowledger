@@ -6,6 +6,8 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "chromadb>=0.4.0",
+    "qdrant-client>=1.7.0",
+    "streamlit>=1.28.0",
     "sentence-transformers>=2.2.0",
     "pymupdf>=1.26.7",
     "fastembed==0.7.3",
@@ -18,4 +20,8 @@ dependencies = [
     "firecrawl-py==4.3.6",
     "yt-dlp>=2024.12.13",
     "assemblyai==0.44.3",
+    "soundfile==0.13.1",
+    "kokoro>=0.9.4",
+    "pip>=25.3",
+    "hf-xet>=1.2.0",
 ]

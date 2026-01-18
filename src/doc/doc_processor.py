@@ -4,6 +4,7 @@ from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
 from pathlib import Path
 import hashlib
+import uuid
 from datetime import datetime
 
 import pymupdf
@@ -30,8 +31,8 @@ class DocumentChunk:
             self.metadata = {}
 
     def _generate_chunk_id(self) -> str:
-        content_hash = hashlib.md5(self.content.encode()).hexdigest()[:8]
-        return f"{self.source_type}_{self.chunk_index}_{content_hash}"
+        # Generate a UUID for Qdrant compatibility
+        return str(uuid.uuid4())
     
     def get_citation_info(self) -> Dict[str, Any]:
         citation = {

@@ -8,7 +8,7 @@ from mistralai import Mistral
 
 # Load environment variables from .env file
 load_dotenv()
-from src.vector_db.chroma_vector_db import ChromaVectorDB
+from src.vector_db.qdrant_vector_db import QdrantVectorDB
 from src.embeddings.embedding_generator import EmbeddingGenerator
 
 logging.basicConfig(level=logging.INFO)
@@ -42,7 +42,7 @@ class RAGMistralGenerator:
     def __init__(
         self,
         embedding_generator: EmbeddingGenerator,
-        vector_db: ChromaVectorDB,
+        vector_db: QdrantVectorDB,
         mistral_api_key: Optional[str] = None,
         model_name: str = "mistral-large-latest"
     ):
@@ -300,7 +300,7 @@ Please provide a well-structured summary with proper citations:"""
 if __name__ == "__main__":
     from src.doc.doc_processor import DocumentProcessor
     from src.embeddings.embedding_generator import EmbeddingGenerator
-    from src.vector_db.chroma_vector_db import ChromaVectorDB
+    from src.vector_db.qdrant_vector_db import QdrantVectorDB
     
     mistral_key = os.getenv("MISTRAL_API_KEY")
     if not mistral_key:
@@ -309,7 +309,7 @@ if __name__ == "__main__":
     
     try:
         embedding_gen = EmbeddingGenerator()
-        vector_db = ChromaVectorDB()
+        vector_db = QdrantVectorDB()
         rag_generator = RAGMistralGenerator(
             embedding_generator=embedding_gen,
             vector_db=vector_db,

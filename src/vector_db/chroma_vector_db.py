@@ -22,18 +22,34 @@ class ChromaVectorDB:
         self._initialize_client()
         self._setup_collection()
     
+    # def _initialize_client(self):
+    #     try:
+    #         # Create persistent client
+    #         self.client = chromadb.PersistentClient(
+    #             path=str(self.db_path),
+    #             settings=Settings(
+    #                 anonymized_telemetry=False,
+    #                 allow_reset=True
+    #             )
+    #         )
+    #         logger.info(f"ChromaDB client initialized with database: {self.db_path}")
+            
+    #     except Exception as e:
+    #         logger.error(f"Failed to initialize ChromaDB client: {str(e)}")
+    #         raise
+
     def _initialize_client(self):
         try:
-            # Create persistent client
-            self.client = chromadb.PersistentClient(
-                path=str(self.db_path),
-                settings=Settings(
+            # In-memory client (Windows-safe)
+            self.client = chromadb.Client(
+                Settings(
                     anonymized_telemetry=False,
                     allow_reset=True
                 )
             )
-            logger.info(f"ChromaDB client initialized with database: {self.db_path}")
-            
+
+            logger.info("ChromaDB in-memory client initialized successfully")
+
         except Exception as e:
             logger.error(f"Failed to initialize ChromaDB client: {str(e)}")
             raise
@@ -204,6 +220,18 @@ class ChromaVectorDB:
             logger.error(f"Error deleting collection: {str(e)}")
             raise
     
+    def close(self):
+        """Close the ChromaDB client connection"""
+        try:
+            if self.client:
+                # For in-memory client, we don't need to explicitly close
+                # Just reset references
+                self.collection = None
+                self.client = None
+                logger.info("ChromaDB client closed")
+        except Exception as e:
+            logger.error(f"Error closing ChromaDB client: {str(e)}")
+
     def get_collection_stats(self) -> Dict[str, Any]:
         """Get collection statistics"""
         try:

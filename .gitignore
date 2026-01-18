@@ -11,3 +11,5 @@ wheels/
 .env
 .vscode
 chroma_db
+podcast_output
+data
